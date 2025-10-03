@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to top, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Disney', cursive;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-size: 2em;
+      color: #ffe066;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ffef9f, 0 0 20px #ffd700, 0 0 30px #ffcc00;
+      }
+      to {
+        text-shadow: 0 0 20px #fff7b3, 0 0 30px #ffeb3b, 0 0 40px #ffd700;
+      }
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars">
+    <!-- Tạo nhiều ngôi sao -->
+    <script>
+      for(let i=0; i<100; i++){
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.querySelector(".stars").appendChild(star);
+      }
+    </script>
+  </div>
+  
+  <h1>✨ Happy Birthday ✨</h1>
+  <h2>Wishing you a magical day 🎂</h2>
+</body>
+</html>
+
